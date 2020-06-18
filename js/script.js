@@ -80,6 +80,14 @@
 
         /* for each article */
 
+        const articles = document.querySelector(optArticleSelector);
+
+        console.log(articles);
+
+        for (let article of articles) {
+            
+        }
+
             /* get the article id */
 
             /* find the title element */
