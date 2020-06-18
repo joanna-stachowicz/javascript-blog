@@ -86,17 +86,20 @@
 
         for (let article of articles) {
             
-        }
-
             /* get the article id */
 
-            /* find the title element */
+            const articleId = article.getAttribute('id');
 
+            /* find the title element */
             /* get the title from the title element */
+
+            const articleTitle = article.querySelector(optTitleSelector).innerHTML;
 
             /* create HTML of the link */
 
             /* insert link into titlelist */
+
+        }
 
     }
 
