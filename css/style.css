@@ -6,6 +6,7 @@
 }
 
 body {
+  margin: 0 0;
   background: #fff;
   font-family: "Source Sans Pro", sans-serif;
   color: #444;
@@ -17,6 +18,7 @@ body {
 .container {
   max-width: 1140px;
   margin: 0 auto;
+  border: none;
 }
 
 .section-title {
@@ -58,12 +60,38 @@ body {
 }
 
 /* Logo */
+.page-title {
+  position: relative;
+  background-image: url("https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  height: 60vh;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.page-title::after {
+  position: absolute;
+  content: '';
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  z-index: 1;
+}
+
 .logo {
+  position: absolute;
+  margin: 0 auto;
   font-family: "Sacramento", cursive;
   font-weight: 400;
   font-size: 104px;
   line-height: 1;
   text-align: center;
+  color: #fff;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
 /* Lists */
@@ -81,18 +109,46 @@ body {
   display: inline-block;
 }
 
+li a, li span {
+  text-decoration: none;
+  color: #006266;
+}
+
+li a:hover, li span:hover {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+li a:visited, li span:visited {
+  color: #00383a;
+}
+
 /* Authors */
 .authors li {
   margin-bottom: 12px;
 }
 
+/* Sidebars, posts */
+.posts, .sidebar {
+  border: none;
+}
+
+.posts {
+  background: #f1f2f6;
+  position: relative;
+}
+
 /* Post */
 .post {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  transition: all 0.5s;
+  z-index: 0;
 }
 
 .post.active {
-  display: block;
+  opacity: 1;
+  z-index: 1;
 }
 
 .post-author {
@@ -106,5 +162,10 @@ body {
 
 .post-tags p {
   margin: 0 10px 0 0;
+}
+
+/* Tag */
+.tags span {
+  color: #444;
 }
 /*# sourceMappingURL=style.css.map */
