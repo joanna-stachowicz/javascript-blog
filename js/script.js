@@ -58,7 +58,7 @@
         optTitleSelector = '.post-title',
         optTitleListSelector = '.titles';
 
-    function generateTitleLinks() {
+    const generateTitleLinks = function() {
 
         /* remove content of titleList */
 
