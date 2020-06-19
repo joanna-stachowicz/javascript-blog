@@ -80,9 +80,11 @@
 
         /* for each article */
 
-        const articles = document.querySelector(optArticleSelector);
+        const articles = document.querySelectorAll(optArticleSelector);
 
         console.log(articles);
+
+        let html = '';
 
         for (let article of articles) {
             
@@ -101,9 +103,18 @@
 
             console.log(linkHTML);
 
+            /* insert link into html variable */
+
+            /* titleList.insertAdjacentHTML('beforeend', linkHTML); */
+
+            html = html + linkHTML; 
+
             /* insert link into titlelist */
 
+            console.log(html);
         }
+
+        titleList.innerHTML = html;
 
     }
 
