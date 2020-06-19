@@ -97,6 +97,10 @@
 
             /* create HTML of the link */
 
+            const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+
+            console.log(linkHTML);
+
             /* insert link into titlelist */
 
         }
