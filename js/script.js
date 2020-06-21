@@ -129,6 +129,8 @@
 
     console.log(articles);
 
+    let html = '';
+
     /* START LOOP: for every article: */
 
     for (let article of articles) {
