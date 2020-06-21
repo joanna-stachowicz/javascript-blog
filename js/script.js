@@ -151,13 +151,21 @@
 
       /* split tags into array */
 
-      /* START LOOP: foor each tag */
+      const articleTagsArray = articleTags.split(' ');
 
-      /* generate HTML of the link */
+      console.log(articleTagsArray);
 
-      /* add generated code to html variable */
+      /* START LOOP: for each tag */
 
-      /* END LOOP: for each tag */
+      for (let tag of articleTagsArray) {
+
+        /* generate HTML of the link */
+
+        /* add generated code to html variable */
+
+        /* END LOOP: for each tag */
+
+      }
 
       /* insert HTML of all the links into the tags wrapper */
 
