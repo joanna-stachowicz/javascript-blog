@@ -131,25 +131,29 @@
 
     /* START LOOP: for every article: */
 
-    /* find tags wrapper */
+    for (let article of articles) {
 
-    /* make html variable with empty string */
+      /* find tags wrapper */
 
-    /* get tags from data-tags attribute */
+      /* make html variable with empty string */
 
-    /* split tags into array */
+      /* get tags from data-tags attribute */
 
-    /* START LOOP: foor each tag */
+      /* split tags into array */
 
-    /* generate HTML of the link */
+      /* START LOOP: foor each tag */
 
-    /* add generated code to html variable */
+      /* generate HTML of the link */
 
-    /* END LOOP: for each tag */
+      /* add generated code to html variable */
 
-    /* insert HTML of all the links into the tags wrapper */
+      /* END LOOP: for each tag */
 
-    /* END LOOP: for every article: */
+      /* insert HTML of all the links into the tags wrapper */
+
+      /* END LOOP: for every article: */
+
+    }
 
   };
 
