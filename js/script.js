@@ -135,6 +135,10 @@
 
       /* find tags wrapper */
 
+      const tagList = article.querySelector(optArticleTagsSelector);
+
+      console.log(tagList);
+
       /* make html variable with empty string */
 
       /* get tags from data-tags attribute */
