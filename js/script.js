@@ -179,6 +179,8 @@
 
       /* insert HTML of all the links into the tags wrapper */
 
+      optArticleTagsSelector.innerHTML = html
+
       /* END LOOP: for every article: */
 
     }
