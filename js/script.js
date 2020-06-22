@@ -203,7 +203,13 @@
 
     const href = clickedElement.getAttribute('href');
 
+    console.log(href);
+
     /* make a new constant "tag" and extract tag from the "href" constant */
+
+    const tag = href.replace('#tag-', '');
+
+    console.log(tag);
 
     /* find all tag links with class active */
 
