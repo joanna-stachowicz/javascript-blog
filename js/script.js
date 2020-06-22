@@ -213,6 +213,8 @@
 
     /* find all tag links with class active */
 
+    const activeTags = document.querySelectorAll('a.active[href^="#tag-"]');
+
     /* START LOOP: for each active tag link */
 
     /* remove class active */
