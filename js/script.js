@@ -189,7 +189,7 @@
 
   generateTags();
 
-  const tagClickHandler = function(event) {
+  const tagClickHandler = function (event) {
 
     /* prevent default action for this event */
 
@@ -217,9 +217,15 @@
 
     /* START LOOP: for each active tag link */
 
-    /* remove class active */
+    for (let activeTag of activeTags) {
 
-    /* END LOOP: for each active tag link */
+      /* remove class active */
+
+      activeTag.classList.remove('active');
+
+      /* END LOOP: for each active tag link */
+
+    }
 
     /* find all tag links with "href" attribute equal to the "href" constant */
 
@@ -232,7 +238,7 @@
     /* execute function "generateTitleLinks" with article selector as argument */
   };
 
-  const addClickListenersToTags = function() {
+  const addClickListenersToTags = function () {
 
     /* find all links to tags */
 
