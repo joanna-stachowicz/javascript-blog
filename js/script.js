@@ -129,8 +129,6 @@
 
     console.log(articles);
 
-    let html = '';
-
     /* START LOOP: for every article: */
 
     for (let article of articles) {
@@ -142,6 +140,8 @@
       console.log(tagList);
 
       /* make html variable with empty string */
+
+      let html = '';
 
       /* get tags from data-tags attribute */
 
@@ -179,7 +179,7 @@
 
       /* insert HTML of all the links into the tags wrapper */
 
-      optArticleTagsSelector.innerHTML = html
+      tagList.innerHTML = html;
 
       /* END LOOP: for every article: */
 

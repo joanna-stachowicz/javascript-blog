@@ -107,6 +107,7 @@ body {
 
 .list-horizontal li {
   display: inline-block;
+  margin-right: 10px;
 }
 
 li a, li span {
