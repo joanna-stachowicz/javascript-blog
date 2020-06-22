@@ -229,6 +229,10 @@
 
     /* find all tag links with "href" attribute equal to the "href" constant */
 
+    const targetTags = document.querySelectorAll('a[href="' + href + '"]');
+
+    console.log(targetTags);
+
     /* START LOOP: for each found tag link */
 
     /* add class active */
