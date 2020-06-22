@@ -248,6 +248,9 @@
     }
 
     /* execute function "generateTitleLinks" with article selector as argument */
+
+    generateTitleLinks('[data-tags~="' + tag + '"]');
+
   };
 
   const addClickListenersToTags = function () {
