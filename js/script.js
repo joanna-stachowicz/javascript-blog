@@ -235,9 +235,17 @@
 
     /* START LOOP: for each found tag link */
 
-    /* add class active */
+    for (let targetTag of targetTags) {
 
-    /* END LOOP: for each found tag link */
+      /* add class active */
+
+      targetTag.classList.add('active');
+
+      console.log(targetTag);
+
+      /* END LOOP: for each found tag link */
+
+    }
 
     /* execute function "generateTitleLinks" with article selector as argument */
   };
