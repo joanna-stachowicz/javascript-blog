@@ -110,17 +110,17 @@ body {
   margin-right: 10px;
 }
 
-li a, li span {
+li a, li span, .post-author a {
   text-decoration: none;
   color: #006266;
 }
 
-li a:hover, li span:hover {
+li a:hover, li span:hover, .post-author a:hover {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
 
-li a:visited, li span:visited {
+li a:visited, li span:visited, .post-author a:visited {
   color: #00383a;
 }
 

@@ -58,7 +58,7 @@
     optTitleSelector = '.post-title',
     optTitleListSelector = '.titles',
     optArticleTagsSelector = '.post-tags .list',
-    optArticleAuthorSelector = '.post .post-author'
+    optArticleAuthorSelector = '.post .post-author';
 
   const generateTitleLinks = function (customSelector = '') {
 
@@ -296,10 +296,17 @@
 
       console.log(authorList);
 
-      /* get tags from data-tags attribute */
+      /* get author from data-author attribute */
+
+      const author = article.getAttribute('data-author');
+
+      /* generate HTML of the link */
+
+      const linkHTML = '<a href="#author-' + author + '">' + author + '</a>';
+
       /* insert HTML of all the links into the authors wrapper */
 
-      authorList.innerHTML = article.getAttribute('data-author');
+      authorList.innerHTML = linkHTML;
 
       /* END LOOP: for every article: */
 
