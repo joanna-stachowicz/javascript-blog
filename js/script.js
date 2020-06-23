@@ -267,6 +267,8 @@
 
       /* add tagClickHandler as event listener for that link */
 
+      tagLink.addEventListener('click', tagClickHandler);
+
       /* END LOOP: for each link */
 
     }
