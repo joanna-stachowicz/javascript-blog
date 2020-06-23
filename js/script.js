@@ -59,7 +59,9 @@
     optTitleListSelector = '.titles',
     optArticleTagsSelector = '.post-tags .list';
 
-  const generateTitleLinks = function () {
+  const generateTitleLinks = function (customSelector = '') {
+
+    console.log(customSelector);
 
     /* remove content of titleList */
 
@@ -75,7 +77,7 @@
 
     /* for each article */
 
-    const articles = document.querySelectorAll(optArticleSelector);
+    const articles = document.querySelectorAll(optArticleSelector + customSelector);
 
     console.log(articles);
 
@@ -256,6 +258,8 @@
   const addClickListenersToTags = function () {
 
     /* find all links to tags */
+
+    const allTags = document.querySelectorAll('a[href^="#tag-"]');
 
     /* START LOOP: for each link */
 
