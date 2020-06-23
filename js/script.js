@@ -259,13 +259,18 @@
 
     /* find all links to tags */
 
-    const allTags = document.querySelectorAll('a[href^="#tag-"]');
+    const allTagLinks = document.querySelectorAll('a[href^="#tag-"]');
 
     /* START LOOP: for each link */
 
-    /* add tagClickHandler as event listener for that link */
+    for (let tagLink of allTagLinks) {
 
-    /* END LOOP: for each link */
+      /* add tagClickHandler as event listener for that link */
+
+      /* END LOOP: for each link */
+
+    }
+
   };
 
   addClickListenersToTags();
