@@ -127,9 +127,11 @@
 
   const generateTags = function () {
 
-    /* create a new variable allTags with an empty array */
+    /* create a new variable allTags with an empty object */
 
-    let allTags = [];
+    let allTags = {};
+
+    console.log(allTags);
 
     /* find all articles */
 
@@ -201,15 +203,15 @@
 
       /* END LOOP: for every article: */
 
-      /* find list of tags in right column */
-
-      const tagList = document.querySelector('.tags');
-
-      /* add html from allTags to tagList */
-
-      tagList.innerHTML = allTags.join(' ');
-
     }
+
+    /* find list of tags in right column */
+
+    const tagList = document.querySelector('.tags');
+
+    /* add html from allTags to tagList */
+
+    tagList.innerHTML = allTags.join(' ');
 
   };
 
