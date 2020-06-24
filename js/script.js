@@ -191,6 +191,8 @@
 
           allTags[tag] = 1;
 
+        } else {
+          allTags[tag]++;
         }
 
         /* END LOOP: for each tag */
@@ -209,9 +211,25 @@
 
     const tagList = document.querySelector('.tags');
 
-    /* add html from allTags to tagList */
+    /* create variable for all links HTML code */
 
-    tagList.innerHTML = allTags.join(' ');
+    let allTagsHTML = '';
+
+    /* START LOOP: for each tag in allTags: */
+
+    for (let tag in allTags) {
+
+      /* generate code of a link a nd add it to allTagsHTML */
+
+      allTagsHTML += '<li><a href="#">' + tag + '</a> <span>' + ' (' + allTags[tag] + ') ' + '</span></li>';
+
+      /* END LOOP: for each tag in allTags: */
+
+    }
+
+    /* add HTML from allTagsHTML to tagList */
+
+    tagList.innerHTML = allTagsHTML;
 
   };
 
