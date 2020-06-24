@@ -185,11 +185,11 @@
 
         /*check if this link is NOT already in allTags */
 
-        if (allTags.indexOf(linkHTML) == -1) {
+        if (!allTags[tag]) {
 
-          /* add generated code to allTags array */
+          /* add tag to allTags object */
 
-          allTags.push(linkHTML);
+          allTags[tag] = 1;
 
         }
 
