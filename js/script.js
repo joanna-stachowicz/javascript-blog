@@ -1,6 +1,33 @@
 {
   'use strict';
 
+  const opts = {
+    tagSizes: {
+      count: 8,
+      classPrefix: 'tag-size-',
+    },
+  };
+
+  const select = {
+    all: {
+      articles: '.post',
+      linksTo: {
+        tags: 'a[href^="#tag-"]',
+        authors: 'a[href^="#author-"]',
+      },
+    },
+    article: {
+      titles: '.post-title',
+      tags: '.post-tags .list',
+      author: '.post-author',
+    },
+    listOf: {
+      titles: '.titles',
+      tags: '.tags.list',
+      authors: '.authors.list',
+    },
+  };
+
   /*
         document.getElementById('test-button').addEventListener('click', function () {
             const links = document.querySelectorAll('.titles a');
@@ -54,23 +81,13 @@
 
   };
 
-  const optArticleSelector = '.post',
-    optTitleSelector = '.post-title',
-    optTitleListSelector = '.titles',
-    optArticleTagsSelector = '.post-tags .list',
-    optArticleAuthorSelector = '.post .post-author',
-    optTagsListSelector = '.tags.list',
-    optCloudClassCount = 8,
-    optCloudClassPrefix = 'tag-size-',
-    optAuthorsListSelector = '.authors.list';
-
   const generateTitleLinks = function (customSelector = '') {
 
     console.log(customSelector);
 
     /* remove content of titleList */
 
-    const titleList = document.querySelector(optTitleListSelector);
+    const titleList = document.querySelector(select.listOf.titles);
 
     console.log(titleList);
 
@@ -82,7 +99,7 @@
 
     /* for each article */
 
-    const articles = document.querySelectorAll(optArticleSelector + customSelector);
+    const articles = document.querySelectorAll(select.all.articles + customSelector);
 
     console.log(articles);
 
@@ -97,7 +114,7 @@
       /* find the title element */
       /* get the title from the title element */
 
-      const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+      const articleTitle = article.querySelector(select.article.titles).innerHTML;
 
       /* create HTML of the link */
 
@@ -147,8 +164,8 @@
     const normalizedCount = count - params.min;
     const normalizedMax = params.max - params.min;
     const percentage = normalizedCount / normalizedMax;
-    const classNumber = Math.floor(percentage * (optCloudClassCount - 1) + 1);
-    return optCloudClassPrefix + classNumber;
+    const classNumber = Math.floor(percentage * (opts.tagSizes.count - 1) + 1);
+    return opts.tagSizes.classPrefix + classNumber;
   };
 
   const generateTags = function () {
@@ -161,7 +178,7 @@
 
     /* find all articles */
 
-    const articles = document.querySelectorAll(optArticleSelector);
+    const articles = document.querySelectorAll(select.all.articles);
 
     console.log(articles);
 
@@ -171,7 +188,7 @@
 
       /* find tags wrapper */
 
-      const tagList = article.querySelector(optArticleTagsSelector);
+      const tagList = article.querySelector(select.article.tags);
 
       console.log(tagList);
 
@@ -237,7 +254,7 @@
 
     /* find list of tags in right column */
 
-    const tagList = document.querySelector(optTagsListSelector);
+    const tagList = document.querySelector(select.listOf.tags);
 
     const tagsParams = calculateTagsParams(allTags);
 
@@ -339,7 +356,7 @@
 
     /* find all links to tags */
 
-    const allTagLinks = document.querySelectorAll('a[href^="#tag-"]');
+    const allTagLinks = document.querySelectorAll(select.all.linksTo.tags);
 
     /* START LOOP: for each link */
 
@@ -365,7 +382,7 @@
 
     /* find all articles */
 
-    const articles = document.querySelectorAll(optArticleSelector);
+    const articles = document.querySelectorAll(select.all.articles);
 
     console.log(articles);
 
@@ -375,7 +392,7 @@
 
       /* find authors wrapper */
 
-      const authorList = article.querySelector(optArticleAuthorSelector);
+      const authorList = article.querySelector(select.article.author);
 
       console.log(authorList);
 
@@ -409,7 +426,7 @@
 
     /* find list of authors in right column */
 
-    const authorList = document.querySelector(optAuthorsListSelector);
+    const authorList = document.querySelector(select.listOf.authors);
 
     /* create variable for all links HTML code */
 
