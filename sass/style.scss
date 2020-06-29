@@ -184,3 +184,48 @@ li a, li span, .post-author a {
 .tags span {
   color: $color-dark;
 }
+
+.tags li {
+  display: inline;
+};
+
+.tags .tag-size-8 {
+  font-size: 3em;
+  color: #5533A8;
+};
+
+.tags .tag-size-7 {
+  font-size: 2.8em;
+  color: #6E33A8;
+};
+
+.tags .tag-size-6 {
+  font-size: 2.6em;
+  color: #7D33A8;
+};
+
+.tags .tag-size-5 {
+  font-size: 2.4em;
+  color: #9633A8;
+};
+
+.tags .tag-size-4 {
+  font-size: 2.2em;
+  color: #A83398;
+};
+
+.tags .tag-size-3 {
+  font-size: 2em;
+  color: #A83376;
+};
+
+.tags .tag-size-2 {
+  font-size: 1.8em;
+  color: #A83365;
+};
+
+.tags .tag-size-1 {
+  font-size: 1.6em;
+  color: #A8335C;
+};
+

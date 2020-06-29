@@ -59,7 +59,9 @@
     optTitleListSelector = '.titles',
     optArticleTagsSelector = '.post-tags .list',
     optArticleAuthorSelector = '.post .post-author',
-    optTagsListSelector = '.tags.list';
+    optTagsListSelector = '.tags.list',
+    optCloudClassCount = 8,
+    optCloudClassPrefix = 'tag-size-';
 
   const generateTitleLinks = function (customSelector = '') {
 
@@ -125,6 +127,29 @@
 
   generateTitleLinks();
 
+  /* znalezienie najmniejszej i największej liczby wystąpień */
+  const calculateTagsParams = function (tags) {
+    const params = {
+      max: 0,
+      min: 999999
+    };
+    for (let tag in tags) {
+      console.log(tag + ' is used ' + tags[tag] + ' times');
+      params.max = Math.max(tags[tag], params.max);
+      params.min = Math.min(tags[tag], params.min);
+    }
+    return params;
+  };
+
+  /* Wybranie klasy dla tagu */
+  const calculateTagClass = function (count, params) {
+    const normalizedCount = count - params.min;
+    const normalizedMax = params.max - params.min;
+    const percentage = normalizedCount / normalizedMax;
+    const classNumber = Math.floor(percentage * (optCloudClassCount - 1) + 1);
+    return optCloudClassPrefix + classNumber;
+  };
+
   const generateTags = function () {
 
     /* create a new variable allTags with an empty object */
@@ -149,10 +174,6 @@
 
       console.log(tagList);
 
-      /* make html variable with empty string */
-
-      let html = '';
-
       /* get tags from data-tags attribute */
 
       const articleTags = article.getAttribute('data-tags');
@@ -164,6 +185,10 @@
       const articleTagsArray = articleTags.split(' ');
 
       console.log(articleTagsArray);
+
+      /* make html variable with empty string */
+
+      let html = '';
 
       /* START LOOP: for each tag */
 
@@ -203,6 +228,8 @@
 
       tagList.innerHTML = html;
 
+      console.log('html poza pętlą:', html);
+
       /* END LOOP: for every article: */
 
     }
@@ -210,6 +237,10 @@
     /* find list of tags in right column */
 
     const tagList = document.querySelector('.tags');
+
+    const tagsParams = calculateTagsParams(allTags);
+
+    console.log('tagsParams:', tagsParams);
 
     /* create variable for all links HTML code */
 
@@ -221,11 +252,15 @@
 
       /* generate code of a link a nd add it to allTagsHTML */
 
-      allTagsHTML += '<li><a href="#">' + tag + '</a> <span>' + ' (' + allTags[tag] + ') ' + '</span></li>';
+      const tagLinkHTML = '<li><a class="' + calculateTagClass(allTags[tag], tagsParams) + '" href="#tag-' + tag + '">' + tag + '</a> ' + '</li>';
+      console.log('tagLinkHTML:', tagLinkHTML);
+
+      allTagsHTML += tagLinkHTML;
 
       /* END LOOP: for each tag in allTags: */
 
     }
+    console.log(allTagsHTML);
 
     /* add HTML from allTagsHTML to tagList */
 
