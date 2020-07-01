@@ -7,7 +7,7 @@
     authorLink: Handlebars.compile(document.querySelector('#template-author-link').innerHTML),
     tagCloudLink: Handlebars.compile(document.querySelector('#template-tag-cloud-link').innerHTML),
     authorListLink: Handlebars.compile(document.querySelector('#template-author-list-link').innerHTML),
-  }
+  };
 
   const opts = {
     tagSizes: {
@@ -272,9 +272,9 @@
 
     /* create variable for all links HTML code */
 
-   const allTagsData = {
-     tags: []
-   };
+    const allTagsData = {
+      tags: []
+    };
 
     /* START LOOP: for each tag in allTags: */
 
